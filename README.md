@@ -39,25 +39,25 @@ cp /usr/bin/upx staging_dir/host/bin
 cp /usr/bin/upx-ucl staging_dir/host/bin
 ./scripts/feeds update -a
 ./scripts/feeds install -a
-make menuconfig （此处可以直接下载config文件使用）
-make -j8 download V=s
-make -j1 V=s
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make menuconfig （此处可以直接下载config文件使用）
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j8 download V=s
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j1 V=s
 ```
 ### 2.第二次及后续编译
 ```bash
 cd openwrt
 git pull
 ./scripts/feeds update -a && ./scripts/feeds install -a
-make menuconfig
-make -j8 download
-make -j$(($(nproc) + 1)) V=s
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make menuconfig
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j8 download
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j$(($(nproc) + 1)) V=s
 ```
 ### 3.重新配置：
 ```bash
 rm -rf ./tmp && rm -rf .config
-make menuconfig
-make -j8 download
-make -j$(($(nproc) + 1)) V=s
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make menuconfig
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j8 download
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j$(($(nproc) + 1)) V=s
 ```
 ## 4.v2raya使用前配置
 ```bash
