@@ -37,7 +37,7 @@ sed -i '$a src-git NueXini_Packages https://github.com/NueXini/NueXini_Packages.
 ./scripts/feeds install -a
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make menuconfig （此处可以直接下载config文件使用）
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j8 download V=s
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j1 V=s
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin make -j17 V=s
 ```
 ### 2.第二次及后续编译
 ```bash
